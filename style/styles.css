@@ -1,0 +1,217 @@
+/* Definizione di variabili */
+:root {
+    --primary-bg: #f4f4f4;
+    --header-bg: #34495e;
+    --header-text: #ecf0f1;
+    --footer-bg: #2c3e50;
+    --footer-text: #bdc3c7;
+    --highlight-color: #ecdbff;
+    --shadow-light: rgba(0, 0, 0, 0.1);
+    --shadow-dark: rgba(0, 0, 0, 0.2);
+    --shadow-hover: rgba(0, 0, 0, 0.3);
+    --shadow-overlay: rgba(0, 0, 0, 0.9);
+    --transition-speed: 0.3s;
+}
+
+/* Base per il body */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: var(--primary-bg);
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-x: hidden;
+    /* Rimuove il margine bianco a destra */
+}
+
+/* Header */
+header {
+    background-color: var(--header-bg);
+    color: var(--header-text);
+    padding: 30px 0;
+    text-align: center;
+    box-shadow: 0 4px 20px var(--shadow-light);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 3rem;
+    letter-spacing: 2px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+header h2 {
+    margin: 10px 0 0;
+    font-size: 1.8rem;
+    font-weight: 300;
+    font-style: italic;
+}
+
+/* Sezione descrizione */
+.description {
+    background-color: #fff;
+    margin: 30px auto;
+    padding: 30px;
+    max-width: 900px;
+    border-radius: 12px;
+    box-shadow: 0 6px 25px var(--shadow-light);
+    text-align: center;
+    font-size: 1.2rem;
+    line-height: 1.8;
+}
+
+.description p {
+    margin: 0;
+}
+
+/* Sezione Immagini */
+.images {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.image-item {
+    width: 35%;  /* Aumentato da 30% a 35% */
+    max-width: 300px;
+    height: 200px;
+    border-radius: 10px;
+    box-shadow: 0 6px 20px var(--shadow-dark);
+    transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+    cursor: pointer;
+    object-fit: cover;
+}
+
+.image-item:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 30px var(--shadow-hover);
+}
+
+.image-item:active {
+    transform: scale(1);
+    box-shadow: 0 4px 15px var(--shadow-dark);
+}
+
+/* Footer */
+footer {
+    background-color: var(--footer-bg);
+    color: var(--footer-text);
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+    box-shadow: 0 -4px 20px var(--shadow-light);
+}
+
+footer p {
+    margin: 10px 0;
+}
+
+footer a {
+    color: var(--highlight-color);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Overlay per immagine ingrandita */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--shadow-overlay);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    transition: opacity var(--transition-speed) ease;
+}
+
+.overlay-image {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+    border-radius: 12px;
+    box-shadow: 0 6px 30px var(--shadow-hover);
+    transition: transform var(--transition-speed) ease;
+}
+
+.overlay-image:hover {
+    transform: scale(1.05);
+}
+
+/* Icona di chiusura (X) */
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: #ffffff;
+    font-size: 2.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    transition: color var(--transition-speed) ease;
+}
+
+.close-btn:hover {
+    color: #e74c3c;
+    transform: scale(1.2);
+}
+
+/* Media Query per schermi piccoli */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.5rem;
+    }
+
+    header h2 {
+        font-size: 1.5rem;
+    }
+
+    .description {
+        padding: 20px;
+        margin: 20px;
+    }
+
+    footer {
+        padding: 15px;
+    }
+
+    .image-item {
+        width: 50%;  /* Aumentato da 45% a 50% */
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    header h2 {
+        font-size: 1.2rem;
+    }
+
+    .description {
+        padding: 15px;
+        margin: 15px;
+    }
+
+    .image-item {
+        width: 95%;  /* Aumentato da 90% a 95% */
+    }
+}

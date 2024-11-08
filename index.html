@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studio Legale</title>
+    <link rel="stylesheet" href="./style/styles.css">
+</head>
+
+<body>
+    <!-- Overlay per immagine ingrandita -->
+    <div id="overlay" class="overlay" onclick="closeImage()">
+        <img id="overlayImage" class="overlay-image" alt="Immagine ingrandita">
+        <!-- Icona di chiusura (X) -->
+        <span id="closeBtn" class="close-btn" onclick="closeImage(event)">X</span>
+    </div>
+
+    <header>
+        <h1>Studio Legale</h1>
+        <h2>Avv. Bartolomeo Grippo</h2>
+    </header>
+
+    <section class="description">
+        <p>
+            Lo Studio Legale Bartolomeo Grippo offre assistenza e consulenza legale specializzata. Si dedica con
+            professionalità e attenzione alle esigenze dei suoi clienti, garantendo soluzioni mirate e supporto
+            costante.
+        </p>
+    </section>
+
+    <section class="images">
+        <img src="img/palazzo.jpg" alt="Immagine 1" class="image-item" onclick="expandImage(this)">
+        <img src="img/pianta.jpg" alt="Immagine 2" class="image-item" onclick="expandImage(this)">
+        <img src="img/sala.jpg" alt="Immagine 3" class="image-item" onclick="expandImage(this)">
+    </section>
+
+    <section class="map">
+        <iframe
+            src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAaXsd6_zl61YqYvmLFDb3NU0yOxNjsq_o&q=Torino,+Corso+Re+Umberto+63"
+            width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </section>
+
+    <footer>
+        <p>Torino, Corso Re Umberto 63</p>
+        <p>Tel: <a href="tel:+390115805387">011.580.53.87</a></p>
+        <p>Email: <a href="mailto:info@studiogrippo.it">info@studiogrippo.it</a></p>
+        <p>PEC: bartolomeofrancescogrippo@pec.ordineavvocatitorino.it</p>
+    </footer>
+
+    <script src="./scripts/script.js"></script>
+</body>
+
+</html>
